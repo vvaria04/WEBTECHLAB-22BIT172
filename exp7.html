@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Review Form</title>
+    <center><b>
+    22BIT172
+    Hotel Review Form </b></center>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .review-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .review-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF;
+            text-align: center;
+        }
+
+        .review-form input, .review-form textarea, .review-form select, .review-form button, .review-form input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .review-form input:focus, .review-form textarea:focus, .review-form select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .review-form button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .review-form button:hover {
+            background: #0056b3;
+        }
+        .stars {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.stars span {
+    font-size: 28px;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.stars span:hover {
+    color: #ffd700;
+}
+
+.stars span.active {
+    color: #ffcc00; 
+        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        .reviews {
+            margin-top: 30px;
+        }
+
+        .review {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .review strong {
+            font-size: 18px;
+            color: #007BFF;
+        }
+
+        .review p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .review img {
+            max-width: 100px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .review .rating {
+            font-size: 20px;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .review .category {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-form">
+        <h2>Review Your Stay</h2>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="Room" placeholder="Your Room No." required>
+        <div class="stars" id="starRating">
+            <span data-value="1">☆</span>
+            <span data-value="2">☆</span>
+            <span data-value="3">☆</span>
+            <span data-value="4">☆</span>
+            <span data-value="5">☆</span>
+        </div>
+        <input type="hidden" id="rating" value="5">
+        <textarea id="review" placeholder="Your Review" rows="4" required></textarea>
+        <input type="file" id="image" accept="image/*">
+        
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Excellent</th>
+                <th>Good</th>
+                <th>Average</th>
+                <th>Poor</th>
+            </tr>
+            <tr>
+                <td>Staff Friendliness</td>
+                <td><input type="radio" name="staff" value="Excellent"></td>
+                <td><input type="radio" name="staff" value="Good"></td>
+                <td><input type="radio" name="staff" value="Average"></td>
+                <td><input type="radio" name="staff" value="Poor"></td>
+            </tr>
+            <tr>
+                <td>Hotel Cleanliness</td>
+                <td><input type="radio" name="clean" value="Excellent"></td>
+                <td><input type="radio" name="clean" value="Good"></td>
+                <td><input type="radio" name="clean" value="Average"></td>
+                <td><input type="radio" name="clean" value="Poor"></td>
+            </tr>
+            <tr>
+                <td>Room Service</td>
+                <td><input type="radio" name="service" value="Excellent"></td>
+                <td><input type="radio" name="service" value="Good"></td>
+                <td><input type="radio" name="service" value="Average"></td>
+                <td><input type="radio" name="service" value="Poor"></td>
+            </tr>
+        </table>
+        
+        <button onclick="submitReview()">Submit Review</button>
+    </div>
+    <div class="reviews" id="reviews"></div>
+    
+    <script>
+        // Select all the star elements and add event listeners
+document.querySelectorAll(".stars span").forEach(star => {
+
+// Change star colors
+star.addEventListener("mouseover", function() {
+    let rating = this.getAttribute("data-value"); 
+
+    // Reset all stars
+    document.querySelectorAll(".stars span").forEach(s => {
+        s.style.color = "#ddd";
+    });
+
+    // Highlight stars 
+    for (let i = 0; i < rating; i++) {
+        document.querySelectorAll(".stars span")[i].style.color = "#ffd700"; 
+    }
+});
+
+// Reset stars
+star.addEventListener("mouseout", function() {
+    let rating = document.getElementById("rating").value; 
+
+    // Reset all stars to default color
+    document.querySelectorAll(".stars span").forEach(s => {
+        s.style.color = "#ddd";
+    });
+
+    // Reapply the selected rating color
+    for (let i = 0; i < rating; i++) {
+        document.querySelectorAll(".stars span")[i].style.color = "#ffcc00"; 
+    }
+});
+
+// Handle click event
+star.addEventListener("click", function() {
+    let rating = this.getAttribute("data-value"); 
+    document.getElementById("rating").value = rating; // Store 
+
+    // Reset all stars
+    document.querySelectorAll(".stars span").forEach(s => {
+        s.classList.remove("active");
+        s.textContent = "☆"; // Reset
+    });
+
+    // Highlight stars
+    for (let i = 0; i < rating; i++) {
+        document.querySelectorAll(".stars span")[i].classList.add("active");
+        document.querySelectorAll(".stars span")[i].textContent = "★"; 
+    }
+});
+});
+
+
+function submitReview() {
+    const name = document.getElementById('name').value;
+    const rating = document.getElementById('rating').value;
+    const reviewText = document.getElementById('review').value;
+    const image = document.getElementById('image').files[0]; 
+    const staff = document.querySelector('input[name="staff"]:checked'); 
+    const clean = document.querySelector('input[name="clean"]:checked');
+    const service = document.querySelector('input[name="service"]:checked'); 
+
+    // Validatation
+    if (!name || !reviewText || !staff || !clean || !service) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    //new review element
+    const reviewContainer = document.getElementById('reviews');
+    const reviewDiv = document.createElement('div');
+    reviewDiv.classList.add('review');
+
+    // Populate the review content
+    reviewDiv.innerHTML = `
+        <strong>${name}</strong>
+        <div class="rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div> <!-- Display stars based on rating -->
+        <p>${reviewText}</p>
+        <p class="category">Staff Friendliness: ${staff.value}</p>
+        <p class="category">Hotel Cleanliness: ${clean.value}</p>
+        <p class="category">Room Service: ${service.value}</p>
+    `;
+
+    //image preview
+    if (image) {
+        const imgElement = document.createElement('img');
+        imgElement.src = URL.createObjectURL(image); 
+        reviewDiv.appendChild(imgElement);
+    }
+
+    // Add the new review
+    reviewContainer.prepend(reviewDiv);
+
+    // Reset
+    document.getElementById('name').value = '';
+    document.getElementById('rating').value = '5';
+    document.getElementById('review').value = '';
+    document.getElementById('image').value = '';
+}
+    </script>
+</body>
+</html>

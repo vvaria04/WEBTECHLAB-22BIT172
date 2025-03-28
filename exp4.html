@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML for Beginners</title>
+    <link rel="stylesheet" href="exp51.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: white;
+    border: black;
+}
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    border: 2px solid #888;
+    border-radius: 5px;
+    justify-content: space-between;
+    width: 87.3%;
+    white-space: nowrap;
+    align-items: center;
+    margin-left: 84.5px;
+}
+.navbar li {
+
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 1px 1px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar-info {
+
+    color: bl;
+    padding: 14px 2px;
+    font-size: 18px;
+
+}
+
+.navbar-info:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.complete-btn-container {
+    margin-left: auto;
+}
+
+.complete-btn {
+    padding: 10px 20px;
+    background-color: white(0, 0, 0);
+    color: black(255, 249, 249);
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.complete-btn:hover {
+    background-color: rgb(14, 13, 13);
+    color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+}
+h1 {
+    margin-top: 10px;
+    margin-left: 0px;
+    text-align: center;
+    font-size: 50px;
+    max-width: 870px;
+}
+p {
+    margin-top: 10px;
+    margin-left: 87px;
+    text-align: center;
+    font-size: 18px;
+}
+.intro-text {
+    text-align: start;
+    max-width: 1000px;
+    line-height: 1.2;
+    /* Improves line spacing */
+}
+.video-container {
+    margin-top: 50px;
+    margin-right: 70px;
+    text-align: center;
+}
+.video-container img {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+.start-button {
+
+    display: inline-block;
+    width: 150px;
+    margin: 20px 0;
+    /* Remove auto centering */
+    padding: 10px;
+    background: red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 86.5px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.lesson {
+    margin-left: 72px;
+    background: #fff;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: left;
+}
+
+.lesson img {
+    width: 290px;
+    height: 150px;
+    margin-right: 25px;
+}
+
+.lesson-content {
+    flex-grow: 1;
+    line-height: 1.8;
+}
+
+.lesson-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.lesson-description {
+    font-size: 14px;
+    color: #666;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="video-container">
+            <iframe width="500" height="290" src="https://www.youtube.com/embed/X8BYu3dMKf0" frameborder="0"
+                allowfullscreen align="right">
+            </iframe>
+        </div>
+        <h1>HTML for Beginners</h1>
+        <p class="intro-text">
+            Dive into the fundamentals of web development with our beginner- <br>
+            friendly HTML course.Learn the essentials of HTML,the language <br>
+            behind every webpage,and gain practical experince creating your <br>
+            own web content. Perfect for absolute beginners, this course will <br>
+            equip you with the skills to start building your first websites and set <br>
+            you on the path of becoming a web devloper.
+        </p>
+        <a href="https://www.youtube.com/watch?v=ESnrn1kAD4E&t=3899s" class="start-button">
+            <span class="glyphicon glyphicon-play">&#x25b6; Start Series</span>
+        </a>
+        <header>
+            <nav>
+                <ul class="navbar">
+                    <li class="navbar-info">11 Lessons | 2h 5m | Beginner</li>
+                    <li class="complete-btn-container">
+                        <button class="complete-btn">Complete Series</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML learning path-What is HTML and Why Learn It</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this lesson, we will learn what HTML is and why we
+                    need to know about it.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-HTML Document Structure</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this session, we will learn about the basic structure
+                    of HTML documents.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Text Elements</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this session, we will look at the elements used to
+                    markup text content in HTML.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Anchor Elements</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this session, we will look at a key element in what
+                    make the web, the web Hyperlinks.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Image Element</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this session, we will learn about how to display
+                    images on our webpages.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Intro to Forms</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this lesson, we will lay down our foundational
+                    knowledge of form on the web, knowledge that will be used throughout your career as a webdeveloper.
+                </div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Button Elements</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this lesson, we will explore the button element and
+                    some of the lesser known attributes functionality that can be added to them.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Intro to Forms</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this lesson, we will lay down our foundational
+                    knowledge of form on the web, knowledge that will be used throughout your career as a webdeveloper.
+                </div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+        <div class="lesson">
+            <img src="/Users/viv/Documents/image.png" alt="Lesson Thumbnail"  >
+            <div class="lesson-content">
+                <div class="lesson-title">HTML Learning Path-Button Elements</div>
+                <div class="lesson-description">Nov 03,2023 <br>In this lesson, we will explore the button element and
+                    some of the lesser known attributes functionality that can be added to them.</div><span>
+                    <button class="like-btn" style="background-color: white; border-color: white;">&#x1F44D;</button>
+                    <button class="comment-btn" style="border-color: white; background-color: white;">💬</button>
+                </span>
+
+            </div>
+        </div>
+</body>
+</html>

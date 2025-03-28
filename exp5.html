@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Feedback Form</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+h2 {
+    text-align: center;
+    color: #007BFF;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #444;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.feedback-section {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Student Course Feedback Form</h2>
+        <form action="#" method="post">
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="Course">Course:</label>
+            <input type="text" id="Course" name="Course" required>
+            <br>
+            <br>
+            <hr>
+
+            <div class="feedback-section">
+                <h3>Course Experience</h3>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Excellent</th>
+                        <th>Good</th>
+                        <th>Average</th>
+                        <th>Poor</th>
+                    </tr>
+                    <tr>
+                        <td>Course Material</td>
+                        <td><input type="radio" name="course_material" value="excellent"></td>
+                        <td><input type="radio" name="course_material" value="good"></td>
+                        <td><input type="radio" name="course_material" value="average"></td>
+                        <td><input type="radio" name="course_material" value="poor"></td>
+                    </tr>
+                    <tr>
+                        <td>Instructor Clarity</td>
+                        <td><input type="radio" name="instructor_clarity" value="excellent"></td>
+                        <td><input type="radio" name="instructor_clarity" value="good"></td>
+                        <td><input type="radio" name="instructor_clarity" value="average"></td>
+                        <td><input type="radio" name="instructor_clarity" value="poor"></td>
+                    </tr>
+                    <tr>
+                        <td>Platform Usability</td>
+                        <td><input type="radio" name="platform_usability" value="excellent"></td>
+                        <td><input type="radio" name="platform_usability" value="good"></td>
+                        <td><input type="radio" name="platform_usability" value="average"></td>
+                        <td><input type="radio" name="platform_usability" value="poor"></td>
+                    </tr>
+                    <tr>
+                        <td>Pace of the Course</td>
+                        <td><input type="radio" name="course_pace" value="excellent"></td>
+                        <td><input type="radio" name="course_pace" value="good"></td>
+                        <td><input type="radio" name="course_pace" value="average"></td>
+                        <td><input type="radio" name="course_pace" value="poor"></td>
+                    </tr>
+                    <tr>
+                        <td>Engagement Level</td>
+                        <td><input type="radio" name="engagement_level" value="excellent"></td>
+                        <td><input type="radio" name="engagement_level" value="good"></td>
+                        <td><input type="radio" name="engagement_level" value="average"></td>
+                        <td><input type="radio" name="engagement_level" value="poor"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <font style="TimesNewRoman" size="5" color="#007BFF">
+            <label>Features You Like About the Course:</label></font>
+            <hr>
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="assignments" name="features[]" value="assignments">
+                    <label for="assignments">Assignments</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="projects" name="features[]" value="projects">
+                    <label for="projects">Projects</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="quizzes" name="features[]" value="quizzes">
+                    <label for="quizzes">Quizzes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="exams" name="features[]" value="exams">
+                    <label for="exams">Exams</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="live_sessions" name="features[]" value="live_sessions">
+                    <label for="live_sessions">Live Sessions</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="discussion_forum" name="features[]" value="discussion_forum">
+                    <label for="discussion_forum">Discussion Forum</label>
+                </div>
+            </div>
+            <br>
+            <hr>
+
+            <label for="feedback">Additional Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+            <label for="suggestions">Suggestions for Improvement:</label>
+            <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </div>
+
+</body>
+</html>
